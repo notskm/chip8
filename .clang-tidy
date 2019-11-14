@@ -1,0 +1,32 @@
+---
+# 1: Enable all checks
+# 2: Disable checks that aren't relevant to most projects
+# 3: Disable checks that I don't want in this project
+# 4: Disable aliases. In the case that a cppcoreguidlines check is an alias,
+#    disable the original check and leave the cppcoreguidlines check enabled.
+Checks: |
+  *,
+
+  -abseil*,
+  -google*,
+  -fuchsia*,
+  -llvm-header-guard,
+
+  -cppcoreguidelines-avoid-magic-numbers,
+
+  -modernize-avoid-c-arrays,
+  -readability-magic-numbers,
+  -misc-unconventional-assign-operator,
+  -modernize-use-override,
+  -misc-non-private-member-variables-in-classes,
+  -hicpp-member-init,
+  -hicpp-no-array-decay,
+  -hicpp-no-malloc,
+  -hicpp-special-member-functions,
+  -hicpp-vararg,
+
+FormatStyle: file
+CheckOptions:
+  - key: misc-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic
+    value: '1'
+...

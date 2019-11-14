@@ -1,0 +1,26 @@
+[requires]
+gsl-lite/0.36.0
+imgui-sfml/2.1@bincrafters/stable
+toml11/3.1.0
+whereami/20190107@bincrafters/stable
+fmt/6.1.2
+
+[build_requires]
+catch2/[~=2]
+
+[options]
+sfml:window=True
+sfml:graphics=True
+sfml:audio=True
+sfml:network=False
+sfml:shared=True
+
+[generators]
+cmake_find_package_multi
+virtualenv
+
+[imports]
+bin, *.dll -> ./bin
+., license* -> ./licenses @ folder=True, ignore_case=True
+lib/cmake/Catch2, Catch.cmake -> .
+lib/cmake/Catch2, CatchAddTests.cmake -> .
